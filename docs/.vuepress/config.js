@@ -1,3 +1,5 @@
+const { path } = require('@vuepress/utils');
+
 module.exports = {
   lang: 'en-US',
   title: 'Hello, VuePress!',
@@ -6,4 +8,5 @@ module.exports = {
   themeConfig: {
     logo: 'https://vuejs.org/images/logo.png',
   },
+  theme: path.resolve(__dirname, '../../theme'),
 };
