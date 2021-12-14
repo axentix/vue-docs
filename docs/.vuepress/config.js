@@ -1,9 +1,24 @@
 module.exports = {
   lang: 'en-US',
-  title: 'Hello, VuePress!',
-  description: 'This is my first VuePress site',
+  title: '',
+  description: '',
   bundler: '@vuepress/bundler-vite',
+  head: [
+    ['link', { rel: 'icon', href: '/images/favicon-32x32.png' }],
+    [
+      'link',
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css' },
+    ],
+  ],
   themeConfig: {
-    logo: 'https://vuejs.org/images/logo.png',
+    logo: 'images/axentix.svg',
+    contributors: false,
+    lastUpdated: false,
+    sidebar: [
+      {
+        text: 'Buttons',
+        link: '/buttons/',
+      },
+    ],
   },
 };
