@@ -1,14 +1,15 @@
 {
-  "name": "vue-docs",
+  "name": "@axentix/vue-docs",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Axentix Team",
+  "license": "MIT",
   "devDependencies": {
     "vuepress-vite": "^2.0.0-beta.27"
   }
