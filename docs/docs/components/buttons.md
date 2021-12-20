@@ -7,9 +7,11 @@ description: Button component!
 
 ## Basic buttons
 
+Create basic buttons with the `<ax-btn>` tag.
+
 <ax-btn class="primary rounded-1">Button</ax-btn>
 
-```html:no-line-numbers
+```html
 <ax-btn class="primary rounded-1">Button</ax-btn>
 ```
 
@@ -21,7 +23,7 @@ Change the button size using the `size` property.
 <ax-btn class="primary rounded-1 mx-3">Button</ax-btn>
 <ax-btn size="large" class="primary rounded-1">Button</ax-btn>
 
-```html:no-line-numbers
+```html
 <ax-btn size="small" class="primary rounded-1">Button</ax-btn>
 <ax-btn class="primary rounded-1">Button</ax-btn>
 <ax-btn size="large" class="primary rounded-1">Button</ax-btn>
