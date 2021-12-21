@@ -1,6 +1,6 @@
 ---
 title: Buttons
-description: Button component!
+description: Vue Axentix button component
 ---
 
 # Buttons
