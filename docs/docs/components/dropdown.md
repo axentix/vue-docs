@@ -7,7 +7,7 @@ description: Vue Axentix dropdown component
 
 ## Basic dropdown
 
-Create basic dropdown with the `<ax-dropdown>` tag.
+Create basic dropdowns with the `<ax-dropdown>` tag.
 
 <template>
   <ax-dropdown
