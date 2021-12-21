@@ -15,5 +15,8 @@
     "@vue/composition-api": "^1.4.2",
     "vuepress": "^1.8.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@mdi/js": "^6.5.95",
+    "mdi-vue": "^3.0.12"
+  }
 }
