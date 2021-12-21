@@ -32,7 +32,7 @@ Change the button size using the `size` property.
 ## Circle buttons
 
 Change the button type to circle using the `circle` property.  
-This example is using material design icons with the <a target="_blank" href="https://github.com/therufa/mdi-vue">mdi-vue</a> library.  
+This example is using material design icons with the <a target="_blank" href="https://github.com/therufa/mdi-vue">mdi-vue</a> library.
 
 <template>
   <ax-btn circle class="primary rounded-1 d-flex">
@@ -42,7 +42,7 @@ This example is using material design icons with the <a target="_blank" href="ht
 
 ```html
 <ax-btn circle class="primary rounded-1 d-flex">
-  <mdicon class="d-flex m-auto" name="pen"/>
+  <mdicon class="d-flex m-auto" name="pen" />
 </ax-btn>
 ```
 
