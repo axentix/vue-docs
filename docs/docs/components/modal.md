@@ -154,13 +154,24 @@ export default {
 | "falling"  | Falling modal animation  |
 | "bouncing" | Bouncing modal animation |
 
-## Other options
+## Options
 
 | Option            | Default value | Description                                     |
 | ----------------- | ------------- | ----------------------------------------------- |
+| mode              | ""            | Opening modal animation type                    |
 | bodyScrolling     | false         | Enable the body scrolling while modal is opened |
 | animationDuration | 400           | Set the animation duration of the modal         |
 | overlay           | true          | Enable the modal overlay                        |
+
+## Events
+
+| Option  | Description                                    |
+| ------- | ---------------------------------------------- |
+| @setup  | Event triggered once the modal has been setup  |
+| @open   | Event triggered once the modal starts to open  |
+| @opened | Event triggered once the modal has been opened |
+| @close  | Event triggered once the modal starts to close |
+| @closed | Event triggered once the modal has been closed |
 
 <script>
 export default {
