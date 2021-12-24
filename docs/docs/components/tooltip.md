@@ -1,6 +1,6 @@
 ---
 title: Tooltip
-description: Tooltip component
+description: Vue Axentix tooltip component
 ---
 
 # Tooltip

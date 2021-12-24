@@ -1,6 +1,6 @@
 ---
 title: Collapsible
-description: Collapsible component
+description: Vue Axentix collapsible component
 ---
 
 # Collapsible

@@ -1,6 +1,6 @@
 ---
 title: Sidenav
-description: Sidenav component
+description: Vue Axentix sidenav component
 ---
 
 # Sidenav
@@ -8,7 +8,8 @@ description: Sidenav component
 ## Basic sidenav
 
 Create a sidenav using the `<ax-sidenav>` tag.  
-To open it, add a `v-model` and toggle it using an event as `@click` on the element you want.
+To open it, add a `v-model` and toggle it using an event as `@click` on the element you want.  
+Use `<ax-sidenav-link>` component to create links in the sidenav.
 
 <ax-btn class="primary rounded-1" @click="isSidenavOpened = !isSidenavOpened">Trigger sidenav</ax-btn>
 
@@ -42,6 +43,21 @@ export default {
     };
   },
 };
+```
+
+## Sidenav router-links
+
+To use vue-router links, just use the `tag` prop of the `<ax-sidenav-link>` component.  
+If you want to get an **active sidenav link**, just use the `active` prop.
+
+```html
+<ax-btn class="primary rounded-1" @click="isSidenavOpened = !isSidenavOpened">Trigger sidenav</ax-btn>
+
+<ax-sidenav v-model="isSidenavOpened" class="white shadow-1">
+  <ax-sidenav-link tag="router-link" :active="true" to="/">Router-link 1</ax-sidenav-link>
+  <ax-sidenav-link tag="router-link" to="/">Router-link 2</ax-sidenav-link>
+  <ax-sidenav-link tag="router-link" to="/">Router-link 3</ax-sidenav-link>
+</ax-sidenav>
 ```
 
 ## Sidenav slots
@@ -96,13 +112,13 @@ export default {
 
 ## Options
 
-| Option            | Default value | Description                                     |
-| ----------------- | ------------- | ----------------------------------------------- |
-| overlay           | true          | Enable the sidenav overlay                        |
-| bodyScrolling     | false         | Enable the body scrolling while sidenav is opened |
-| animationDuration | 300           | Set the animation duration of the sidenav         |
-| fixed             | false         | Fix the sidenav on the screen side for any screen size                    |
-| rightAligned      | false         | Sets the sidenav side to the right of the screen                      |
+| Option            | Default value | Description                                            |
+| ----------------- | ------------- | ------------------------------------------------------ |
+| overlay           | true          | Enable the sidenav overlay                             |
+| bodyScrolling     | false         | Enable the body scrolling while sidenav is opened      |
+| animationDuration | 300           | Set the animation duration of the sidenav              |
+| fixed             | false         | Fix the sidenav on the screen side for any screen size |
+| rightAligned      | false         | Sets the sidenav side to the right of the screen       |
 
 ## Events
 

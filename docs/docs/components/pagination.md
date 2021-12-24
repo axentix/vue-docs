@@ -1,6 +1,6 @@
 ---
 title: Pagination
-description: Pagination component
+description: Vue Axentix pagination component
 ---
 
 # Pagination
