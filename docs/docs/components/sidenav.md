@@ -110,6 +110,56 @@ export default {
 | #header | Contains the sidenav-header HTML |
 | #footer | Contains the sidenav-footer HTML |
 
+## Sidenav collapsibles
+
+Create collapsibles in the sidenav to wrap `sidenav-link` by group.  
+Trigger it with another `sidenav-link` and a `@click` event for example.
+
+<ax-btn class="primary rounded-1" @click="isSidenavOpened3 = !isSidenavOpened3">Trigger sidenav</ax-btn>
+
+<template>
+  <ax-sidenav v-model="isSidenavOpened3" class="white shadow-1">
+    <template #header>Sidenav header</template>
+    <ax-sidenav-link :active="isCollapsibleOpened" @click="isCollapsibleOpened = !isCollapsibleOpened"> 
+      Click me !
+    </ax-sidenav-link>
+    <ax-collapsible v-model="isCollapsibleOpened">
+      <ax-sidenav-link>Link 1</ax-sidenav-link>
+      <ax-sidenav-link>Link 2</ax-sidenav-link>
+    </ax-collapsible>
+  </ax-sidenav>
+</template>
+
+**Template**
+
+```html
+<ax-btn class="primary rounded-1" @click="isSidenavOpened3 = !isSidenavOpened3">Trigger sidenav</ax-btn>
+
+<ax-sidenav v-model="isSidenavOpened3" class="white shadow-1">
+  <template #header>Sidenav header</template>
+  <ax-sidenav-link :active="isCollapsibleOpened" @click="isCollapsibleOpened = !isCollapsibleOpened"> 
+    Click me !
+  </ax-sidenav-link>
+  <ax-collapsible v-model="isCollapsibleOpened">
+    <ax-sidenav-link>Link 1</ax-sidenav-link>
+    <ax-sidenav-link>Link 2</ax-sidenav-link>
+  </ax-collapsible>
+</ax-sidenav>
+```
+
+**Script**
+
+```js
+export default {
+  data() {
+    return {
+      isSidenavOpened3: false,
+      isCollapsibleOpened: false
+    }
+  }
+}
+```
+
 ## Options
 
 | Option            | Default value | Description                                            |
@@ -135,7 +185,9 @@ export default {
   data() {
     return {
       isSidenavOpened: false,
-      isSidenavOpened2: false
+      isSidenavOpened2: false,
+      isSidenavOpened3: false,
+      isCollapsibleOpened: false
     }
   }
 }
