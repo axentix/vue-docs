@@ -53,6 +53,7 @@ Change the dropdown animation using the `animation-type` property.
 
 <template>
   <ax-dropdown
+    animation-type="fade"
     v-model="isDropdownOpened2"
     @click="isDropdownOpened2 = !isDropdownOpened2"
     content-classes="white shadow-1"
@@ -66,9 +67,14 @@ Change the dropdown animation using the `animation-type` property.
 </template>
 
 ```html
-<ax-dropdown animation-type="fade" v-model="isDropdownOpened2" @click="isDropdownOpened2 = !isDropdownOpened2" content-classes="white shadow-1">
+<ax-dropdown
+  animation-type="fade"
+  v-model="isDropdownOpened2"
+  @click="isDropdownOpened2 = !isDropdownOpened2"
+  content-classes="white shadow-1"
+>
   <template #trigger>
-    <ax-btn class="airforce dark-1 text-white rounded-1">Fade dropdown</ax-btn>
+    <ax-btn class="airforce dark-1 text-white rounded-1">Dropdown</ax-btn>
   </template>
 
   <div class="dropdown-item">Dropdown-item</div>

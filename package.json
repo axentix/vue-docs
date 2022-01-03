@@ -11,9 +11,9 @@
   "author": "Axentix Team",
   "license": "MIT",
   "devDependencies": {
-    "@axentix/vue": "^0.10.5",
-    "@vue/composition-api": "^1.4.2",
-    "vuepress": "^1.8.2"
+    "@axentix/vue": "^0.11.0",
+    "@vue/composition-api": "^1.4.3",
+    "vuepress": "^1.9.5"
   },
   "dependencies": {
     "@mdi/js": "^6.5.95",

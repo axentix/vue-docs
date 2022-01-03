@@ -69,11 +69,11 @@ To use Vue named slots, use the `<template #{slotName}>` tag with the slot name.
 
 <template>
   <ax-sidenav v-model="isSidenavOpened2" class="white shadow-1">
-    <template #header>Sidenav header</template>
+    <ax-sidenav-header>Sidenav header</ax-sidenav-header>
     <ax-sidenav-link>Link 1</ax-sidenav-link>
     <ax-sidenav-link>Link 2</ax-sidenav-link>
     <ax-sidenav-link>Link 3</ax-sidenav-link>
-    <template #footer>Sidenav footer</template>
+    <ax-sidenav-footer>Sidenav footer</ax-sidenav-footer>
   </ax-sidenav>
 </template>
 
@@ -81,13 +81,13 @@ To use Vue named slots, use the `<template #{slotName}>` tag with the slot name.
 
 ```html
 <ax-sidenav v-model="isSidenavOpened2" class="white shadow-1">
-  <template #header>Sidenav header</template>
+  <ax-sidenav-header>Sidenav header</ax-sidenav-header>
 
   <ax-sidenav-link>Link 1</ax-sidenav-link>
   <ax-sidenav-link>Link 2</ax-sidenav-link>
   <ax-sidenav-link>Link 3</ax-sidenav-link>
 
-  <template #footer>Sidenav footer</template>
+  <ax-sidenav-footer>Sidenav footer</ax-sidenav-footer>
 </ax-sidenav>
 ```
 
@@ -105,10 +105,10 @@ export default {
 
 **Options**
 
-| Slot    | Description                      |
-| ------- | -------------------------------- |
-| #header | Contains the sidenav-header HTML |
-| #footer | Contains the sidenav-footer HTML |
+| Sub Component         | Description                      |
+| --------------------- | -------------------------------- |
+| `<ax-sidenav-header>` | Contains the sidenav-header HTML |
+| `<ax-sidenav-footer>` | Contains the sidenav-footer HTML |
 
 ## Sidenav collapsibles
 
@@ -119,7 +119,7 @@ Trigger it with another `sidenav-link` and a `@click` event for example.
 
 <template>
   <ax-sidenav v-model="isSidenavOpened3" class="white shadow-1">
-    <template #header>Sidenav header</template>
+    <ax-sidenav-header>Sidenav header</ax-sidenav-header>
     <ax-sidenav-link :active="isCollapsibleOpened" @click="isCollapsibleOpened = !isCollapsibleOpened"> 
       Click me !
     </ax-sidenav-link>
@@ -136,10 +136,12 @@ Trigger it with another `sidenav-link` and a `@click` event for example.
 <ax-btn class="primary rounded-1" @click="isSidenavOpened3 = !isSidenavOpened3">Trigger sidenav</ax-btn>
 
 <ax-sidenav v-model="isSidenavOpened3" class="white shadow-1">
-  <template #header>Sidenav header</template>
-  <ax-sidenav-link :active="isCollapsibleOpened" @click="isCollapsibleOpened = !isCollapsibleOpened"> 
+  <ax-sidenav-header>Sidenav header</ax-sidenav-header>
+
+  <ax-sidenav-link :active="isCollapsibleOpened" @click="isCollapsibleOpened = !isCollapsibleOpened">
     Click me !
   </ax-sidenav-link>
+  
   <ax-collapsible v-model="isCollapsibleOpened">
     <ax-sidenav-link>Link 1</ax-sidenav-link>
     <ax-sidenav-link>Link 2</ax-sidenav-link>
@@ -154,10 +156,10 @@ export default {
   data() {
     return {
       isSidenavOpened3: false,
-      isCollapsibleOpened: false
-    }
-  }
-}
+      isCollapsibleOpened: false,
+    };
+  },
+};
 ```
 
 ## Options
