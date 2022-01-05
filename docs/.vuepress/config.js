@@ -1,5 +1,7 @@
 module.exports = {
   base: process.env.AX_BASE_URL ?? '/',
+  title: 'VueAxentix',
+  head: [['link', { rel: 'icon', href: '/img/axentix.svg' }]],
   themeConfig: {
     logo: '/img/axentix.svg',
     sidebarDepth: 0,
