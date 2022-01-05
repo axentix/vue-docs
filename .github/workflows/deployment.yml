@@ -1,0 +1,84 @@
+---
+name: deploy
+
+on:
+  push:
+    branches:
+      - 'v[0-9]+.[0-9]+.x'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Get latest axentix version
+        id: axentix-version
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          repository: axentix/vue
+          excludes: prerelease, draft
+
+      - name: Get destination directory
+        id: dest-dir
+        run: |
+          BRANCH=${GITHUB_REF##*/}
+          echo ::set-output name=DIR::${BRANCH:2}
+
+      - name: Get default branch
+        run: |
+          DEFAULT_BRANCH=$(git remote show origin | awk '/HEAD branch/ {print $NF}')
+          echo "default_branch_ref=refs/heads/$DEFAULT_BRANCH" >> $GITHUB_ENV
+
+      - name: Install node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build main docs
+        if: ${{ env.default_branch_ref == github.ref }}
+        run: npm run build
+        env:
+          AX_BASE_URL: /
+          # AX_CURRENT_BRANCH: ${{ steps.dest-dir.outputs.DIR }}
+          # AX_LATEST_VERSION: ${{ steps.axentix-version.outputs.release }}
+
+      - name: Build docs
+        if: ${{ env.default_branch_ref != github.ref }}
+        run: npm run build
+        env:
+          AX_BASE_URL: /${{ steps.dest-dir.outputs.DIR }}/
+          # AX_CURRENT_BRANCH: ${{ steps.dest-dir.outputs.DIR }}
+          # AX_LATEST_VERSION: ${{ steps.axentix-version.outputs.release }}
+
+      - name: Get versions
+        id: versions
+        run: |
+          BRANCHES=$(git branch -r --list origin/v* | tr '*' ' ' | tr 'origin/v' ' ' | xargs | tr ' ' '\n')
+          BRANCHES="${BRANCHES//'%'/'%25'}"
+          BRANCHES="${BRANCHES//$'\n'/'%0A'}"
+          BRANCHES="${BRANCHES//$'\r'/'%0D'}"
+          echo ::set-output name=VERSIONS::${BRANCHES}
+
+      - name: Deploy main docs
+        if: ${{ env.default_branch_ref == github.ref }}
+        uses: JamesIves/github-pages-deploy-action@4.1.8
+        with:
+          branch: gh-pages
+          folder: ./docs/.vuepress/dist
+          clean-exclude: "${{ steps.versions.outputs.VERSIONS }}"
+
+      - name: Deploy docs
+        if: ${{ env.default_branch_ref != github.ref }}
+        uses: JamesIves/github-pages-deploy-action@4.1.8
+        with:
+          branch: gh-pages
+          folder: ./docs/.vuepress/dist
+          target-folder: ${{ steps.dest-dir.outputs.DIR }}

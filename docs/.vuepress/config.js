@@ -1,4 +1,5 @@
 module.exports = {
+  base: process.env.AX_BASE_URL ?? '/',
   themeConfig: {
     logo: '/img/axentix.svg',
     sidebarDepth: 0,
@@ -18,7 +19,7 @@ module.exports = {
           '/docs/components/tab',
           '/docs/components/tooltip',
         ],
-      }
-    ]
-  }
-}
+      },
+    ],
+  },
+};
