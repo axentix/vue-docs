@@ -11,12 +11,12 @@
   "author": "Axentix Team",
   "license": "MIT",
   "devDependencies": {
-    "@axentix/vue": "^0.11.0",
-    "@vue/composition-api": "^1.4.3",
-    "vuepress": "^1.9.5"
+    "@axentix/vue": "^0.12.0",
+    "@vue/composition-api": "^1.4.9",
+    "vuepress": "^1.9.7"
   },
   "dependencies": {
-    "@mdi/js": "^6.5.95",
+    "@mdi/js": "^6.6.95",
     "mdi-vue": "^3.0.12"
   }
 }
