@@ -22,6 +22,10 @@ module.exports = {
           '/docs/components/tooltip',
         ],
       },
+      {
+        title: 'Forms',
+        children: ['/docs/forms/input', '/docs/forms/select'],
+      },
     ],
   },
 };
