@@ -24,7 +24,7 @@ module.exports = {
       },
       {
         title: 'Forms',
-        children: ['/docs/forms/input', '/docs/forms/select'],
+        children: ['/docs/forms/input', '/docs/forms/select', '/docs/forms/autocomplete'],
       },
     ],
   },

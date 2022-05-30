@@ -111,7 +111,7 @@ export default {
   data() {
     return {
       items: ['Car', 'Moto'],
-      multipleSelectedValue: '',
+      multipleSelectedValue: [],
     };
   },
 };
@@ -143,7 +143,7 @@ export default {
   data() {
     return {
       items: ['Car', 'Moto'],
-      multipleSelectedValue: '',
+      multipleSelectedValue: [],
     };
   },
 };
