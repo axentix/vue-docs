@@ -28,6 +28,7 @@ module.exports = {
         children: [
           '/docs/forms/autocomplete',
           '/docs/forms/check',
+          '/docs/forms/file',
           '/docs/forms/input',
           '/docs/forms/select',
           '/docs/forms/switch',
