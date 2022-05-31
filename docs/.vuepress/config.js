@@ -15,6 +15,7 @@ module.exports = {
           '/docs/components/button-groups',
           '/docs/components/collapsible',
           '/docs/components/dropdown',
+          '/docs/components/lightbox',
           '/docs/components/modal',
           '/docs/components/pagination',
           '/docs/components/sidenav',
@@ -24,7 +25,13 @@ module.exports = {
       },
       {
         title: 'Forms',
-        children: ['/docs/forms/input', '/docs/forms/select', '/docs/forms/autocomplete'],
+        children: [
+          '/docs/forms/autocomplete',
+          '/docs/forms/check',
+          '/docs/forms/input',
+          '/docs/forms/select',
+          '/docs/forms/switch',
+        ],
       },
     ],
   },
