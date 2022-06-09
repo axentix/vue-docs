@@ -16,6 +16,12 @@ pre {
   max-height: 75vh;
 }
 
-.theme-default-content:not(.custom) a:hover {
-  text-decoration: none;
+.theme-default-content:not(.custom) {
+  .lightbox.active {
+    max-width: unset;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
 }

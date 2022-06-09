@@ -1,6 +1,6 @@
 ---
 title: Modal
-description: Vue Axentix dropdown component
+description: Vue Axentix modal component
 ---
 
 # Modal
