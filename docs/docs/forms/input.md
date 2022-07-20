@@ -80,7 +80,7 @@ This way, a material textarea will be created.
     data() {
       return {
         inputValue: '',
-        areaContent: 'dsaw'
+        areaContent: ''
       }
     },
   }
