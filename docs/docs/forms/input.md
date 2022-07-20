@@ -7,6 +7,9 @@ description: Vue Axentix form input
 
 ## Basic input
 
+To choose the `input` tag, just add the `tag="input"` property.  
+This way, a material input will be created.
+
 <template>
   <ax-form material>
     <ax-form-field label="Test input">
@@ -39,10 +42,13 @@ description: Vue Axentix form input
 
 ## Textareas
 
+To choose the `textarea` tag, just add the `tag="textarea"` property.  
+This way, a material textarea will be created.
+
 <template>
   <ax-form material>
     <ax-form-field label="Textarea label">
-      <ax-form-control tag="textarea">Textarea content</ax-form-control>
+      <ax-form-control v-model="areaContent" tag="textarea"></ax-form-control>
     </ax-form-field>
   </ax-form>
 </template>
@@ -52,9 +58,21 @@ description: Vue Axentix form input
 ```html
 <ax-form material>
   <ax-form-field label="Textarea label">
-    <ax-form-control tag="textarea">Textarea content</ax-form-control>
+    <ax-form-control v-model="areaContent" tag="textarea">Textarea content</ax-form-control>
   </ax-form-field>
 </ax-form>
+```
+
+**script**
+
+```js
+  export default {
+    data() {
+      return {
+        areaContent: '',
+      }
+    }
+  }
 ```
 
 <script>
@@ -62,7 +80,8 @@ description: Vue Axentix form input
     data() {
       return {
         inputValue: '',
+        areaContent: 'dsaw'
       }
-    }
+    },
   }
 </script>
